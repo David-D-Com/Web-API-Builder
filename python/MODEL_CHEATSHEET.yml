@@ -1,0 +1,184 @@
+package:
+  name: soliscloud_web_api
+  purpose: >
+    Unofficial Python client for the SolisCloud web application API, intended for
+    scripting, data analysis, integration tests, and implementing endpoints from
+    captured browser traffic.
+
+entrypoints:
+  python_import:
+    module: soliscloud_web_api
+    objects:
+      - SolisSession
+      - SolisWebApiClient
+      - SolisWebApiError
+  cli:
+    command: soliscloud-web-api
+    supports:
+      - --login
+      - --profile
+      - --list-sites
+      - --filter-results
+      - --display-language
+
+auth_flow:
+  summary:
+    - open /login to seed cookies
+    - POST /api/user/login2 with MD5(password)
+    - store csrf/token from login response
+    - sign later requests with the Solis WEB HMAC scheme
+  important_notes:
+    - request signing is required
+    - the web client path format matters for signatures
+    - GET endpoints are signed using the full query-bearing resource path
+
+session_options:
+  filter_results:
+    type: bool
+    default: false
+    effect: trim UI-heavy fields and normalize language-paired keys
+  preferred_language:
+    type: enum
+    values: [en, cn, both]
+    default: both
+    effect: choose how *En and *Cn payload keys are normalized
+  cache_enabled:
+    type: bool
+    default: true
+  cache_policy:
+    type: enum
+    values: [smart, all, off]
+    default: smart
+  cache_live_data:
+    type: bool
+    default: false
+    effect: allow smart mode to cache endpoints that are otherwise treated as live
+
+caching:
+  location: ~/.soliscloud_web_api/cache
+  default_behavior:
+    caches:
+      - historical chart endpoints
+      - all-energy endpoints
+      - stable detail/config/bootstrap endpoints
+    does_not_cache:
+      - login
+      - profile
+      - station list
+      - alarm/warning list endpoints
+  maintenance:
+    clear_method: client.clear_cache()
+  guidance:
+    - prefer cached results for historical analysis
+    - do not refetch historical day/month/year endpoints unless data shape changed
+
+recommended_defaults:
+  analysis_scripts:
+    filter_results: true
+    preferred_language: en
+    cache_policy: smart
+  raw_capture_implementation_work:
+    filter_results: false
+    preferred_language: both
+    cache_policy: smart
+
+endpoint_groups:
+  station:
+    methods:
+      - list_sites
+      - list_all_sites
+      - station_detail
+      - station_all_energy
+      - station_chart_day
+      - station_chart_month
+      - station_chart_year
+      - station_chart_all
+      - station_config_detail
+      - station_device_count
+      - station_user
+      - station_visitor
+  alarms_and_warnings:
+    methods:
+      - alarm_list
+      - alarm_detail
+      - alarm_read_all
+      - warning_list
+      - warning_correction_records
+  inverter:
+    methods:
+      - inverter_list
+      - inverter_index_list
+      - inverter_detail
+      - inverter_all_energy
+      - inverter_chart_day
+      - inverter_chart_month
+      - inverter_chart_year
+      - inverter_chart_all
+      - inverter_at_check
+      - inverter_config
+      - inverter_dispersion_list
+      - inverter_iv_info
+      - inverter_list_search_temp
+  collector_and_metering:
+    methods:
+      - collector_list
+      - collector_detail
+      - collector_day
+      - collector_packet_loss_rate
+      - ammeter_list
+      - epm_list
+      - weather_list
+  optimizer:
+    methods:
+      - opt_config_list
+      - opt_panel_list
+      - opt_station_detail
+  bootstrap_and_messages:
+    methods:
+      - profile
+      - message_list
+      - gly_message_record_list
+      - gly_message_record_realtime
+      - system_right_check
+      - system_config_global_v2
+      - devup_notice
+      - devup_upgrade_fail_notice
+      - devup_user_notice_count
+
+usage_examples:
+  basic_python: |
+    from soliscloud_web_api import SolisSession, SolisWebApiClient
+
+    session = SolisSession.from_env(
+        filter_results=True,
+        preferred_language="en",
+        cache_policy="smart",
+    )
+    client = SolisWebApiClient(session)
+    sites = client.list_all_sites()
+  historical_analysis: |
+    day = client.inverter_chart_day(inverter_id, day="2026-05-02", time_zone=-6)
+    energy = client.inverter_all_energy(inverter_id, begin_time="2026-05-02")
+  cli: |
+    soliscloud-web-api --list-sites --filter-results --display-language en
+
+repo_guidance:
+  reusable_code_path: python/src/soliscloud_web_api
+  windows_only_secret_helpers_belong_in:
+    - tests/
+    - scripts/
+  capture_processing:
+    raw_capture_dir: har/
+    processed_capture_dir: captures_processed/
+    processor_script: scripts/process_capture_dir.py
+
+implementation_guidance:
+  when_adding_endpoints:
+    - confirm GET vs POST from captures
+    - add a thin client method matching the endpoint payload
+    - decide whether smart-cache should include it
+    - prefer preserving raw payload shape unless filter_results is enabled
+  avoid:
+    - embedding credentials in package code
+    - making analysis scripts reinvent Solis request signing
+    - bypassing the core cache for historical queries

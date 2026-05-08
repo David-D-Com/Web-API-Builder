@@ -1,0 +1,24 @@
+id: template_module
+name: Template Module
+description: Starter manifest for a browser-derived API module.
+module:
+  manifest_version: 1
+  package_path: python/src/template_module
+  client_file: python/src/template_module/client.py
+  client_class: TemplateModuleClient
+  processed_capture_dir: captures_processed\template_module
+  browser:
+    base_url: https://www.inspectionsgroup.com
+  capture:
+    url_contains: []
+    domain_contains: []
+    content_kinds:
+    - json
+    mode: last
+commands:
+  run_tests: python .\tests\template_module_smoke.py
+  open_browser: ''
+  process_captures: ''
+pages:
+- name: Base
+  route: /

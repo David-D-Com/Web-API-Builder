@@ -1,0 +1,32 @@
+{
+  "workbench.colorTheme": "Default Dark Modern",
+  "workbench.preferredDarkColorTheme": "Default Dark Modern",
+  "workbench.colorCustomizations": {
+    "editor.background": "#241914",
+    "editorGroupHeader.tabsBackground": "#1D1511",
+    "editorGroupHeader.tabsBorder": "#5B3320",
+    "sideBar.background": "#140E0B",
+    "sideBar.border": "#5B3320",
+    "activityBar.background": "#2A1B14",
+    "activityBar.foreground": "#E2B098",
+    "activityBar.activeBorder": "#F78045",
+    "titleBar.activeBackground": "#4D2A19",
+    "titleBar.activeForeground": "#F4FBFF",
+    "titleBar.inactiveBackground": "#38241A",
+    "titleBar.inactiveForeground": "#D5BBAF",
+    "statusBar.background": "#4A2817",
+    "statusBar.foreground": "#F4FBFF",
+    "statusBar.debuggingBackground": "#67401D",
+    "statusBar.debuggingForeground": "#F4FBFF",
+    "tab.activeBackground": "#302017",
+    "tab.inactiveBackground": "#1C1512",
+    "tab.activeBorderTop": "#F78045",
+    "list.activeSelectionBackground": "#4A2B1C",
+    "list.inactiveSelectionBackground": "#36241C",
+    "list.hoverBackground": "#3D291F",
+    "editorLineNumber.activeForeground": "#FBA174",
+    "editorCursor.foreground": "#FCA87E",
+    "focusBorder": "#FB8D56",
+    "panel.border": "#5B3320"
+  }
+}

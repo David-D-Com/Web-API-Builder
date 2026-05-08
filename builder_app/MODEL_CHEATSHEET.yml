@@ -1,0 +1,54 @@
+app:
+  name: web_api_builder
+  purpose: >
+    Qt6 desktop shell for managing browser-derived API modules in this repo.
+
+repo_structure:
+  manifests_root: modules/
+  builder_app_root: builder_app/
+  reusable_target_package_example: python/src/soliscloud_web_api
+  raw_capture_root: har/
+  processed_capture_root: captures_processed/
+
+core_concepts:
+  module_manifest:
+    file: modules/<module_id>/module.yml
+    describes:
+      - module identity
+      - package/client source location
+      - capture settings
+      - helper commands
+      - discovered pages
+  builder_app:
+    role: >
+      Orchestrates module-centric workflows without moving target-specific logic
+      into the desktop app itself.
+
+current_features:
+  - list modules from YAML manifests
+  - edit manifest metadata and command settings
+  - infer implemented endpoints from a configured Python client class
+  - list processed capture summaries
+  - run configured helper commands
+  - create a new module from the template manifest
+
+known_first_module:
+  id: soliscloud
+  manifest: modules/soliscloud/module.yml
+
+commands:
+  install: py -m pip install -e .\builder_app
+  run_module: python -m web_api_builder
+  run_script: web-api-builder
+
+important_files:
+  qt_shell: builder_app/src/web_api_builder/qt_app.py
+  manifest_loader: builder_app/src/web_api_builder/manifest.py
+  module_template: modules/_template/module.yml
+
+next_likely_steps:
+  - add richer manifest schema validation
+  - add structured endpoint metadata instead of method-name-only inference
+  - add direct capture filtering UI
+  - add code generation flow from processed captures into module clients
+  - add module-scoped test result parsing and status badges
