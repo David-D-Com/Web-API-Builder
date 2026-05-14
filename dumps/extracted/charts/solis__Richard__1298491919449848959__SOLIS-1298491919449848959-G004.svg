@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="420" viewBox="0 0 1080 420">
+<rect width="100%" height="100%" fill="white" />
+<text x="60" y="24" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#111827">Richard - 4804040243030117 - Sustained underperformance</text>
+<line x1="60" y1="330" x2="1060" y2="330" stroke="#374151" />
+<line x1="60" y1="40" x2="60" y2="330" stroke="#374151" />
+<line x1="60" y1="330.0" x2="1060" y2="330.0" stroke="#e5e7eb" />
+<text x="52" y="334.0" text-anchor="end" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#4b5563">0</text>
+<line x1="60" y1="257.5" x2="1060" y2="257.5" stroke="#e5e7eb" />
+<line x1="60" y1="185.0" x2="1060" y2="185.0" stroke="#e5e7eb" />
+<text x="52" y="189.0" text-anchor="end" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#4b5563">50</text>
+<line x1="60" y1="112.5" x2="1060" y2="112.5" stroke="#e5e7eb" />
+<line x1="60" y1="40.0" x2="1060" y2="40.0" stroke="#e5e7eb" />
+<text x="52" y="44.0" text-anchor="end" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#4b5563">100</text>
+<text x="60.0" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">2026-04-11</text>
+<text x="143.3" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">04-12</text>
+<text x="226.7" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">04-13</text>
+<text x="310.0" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">04-14</text>
+<text x="393.3" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">04-15</text>
+<text x="476.7" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">04-16</text>
+<text x="560.0" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">04-17</text>
+<text x="643.3" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">04-18</text>
+<text x="726.7" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">04-19</text>
+<text x="810.0" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">04-20</text>
+<text x="893.3" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">04-21</text>
+<text x="976.7" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">04-22</text>
+<text x="1060.0" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">2026-04-23</text>
+<polyline fill="none" stroke="#2563eb" stroke-width="2" points="60.0,254.6 143.3,308.2 226.7,219.2 310.0,244.7 393.3,225.3 476.7,268.2 560.0,214.9 643.3,189.6 726.7,192.0 810.0,196.6 893.3,305.4 976.7,279.8 1060.0,245.6" />
+<polyline fill="none" stroke="#dc2626" stroke-width="2" points="60.0,254.6 143.3,308.0 226.7,219.2 310.0,244.4 393.3,224.7 476.7,325.4 560.0,262.4 643.3,241.8 726.7,196.6 810.0,205.9" />
+<polyline fill="none" stroke="#dc2626" stroke-width="2" points="976.7,279.2 1060.0,244.7" />
+<polyline fill="none" stroke="#dc2626" stroke-width="2" stroke-dasharray="6 4" points="810.0,205.9 893.3,330.0 976.7,279.2" />
+<circle cx="810.0" cy="205.9" r="4" fill="white" stroke="#dc2626" stroke-width="2" />
+<circle cx="976.7" cy="279.2" r="4" fill="white" stroke="#dc2626" stroke-width="2" />
+<rect x="60" y="368" width="12" height="4" fill="#2563eb" />
+<text x="78" y="372" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#111827">4804040243030101</text>
+<rect x="380" y="368" width="12" height="4" fill="#dc2626" />
+<text x="398" y="372" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#111827">4804040243030117</text>
+</svg>

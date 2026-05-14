@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="420" viewBox="0 0 1080 420">
+<rect width="100%" height="100%" fill="white" />
+<text x="60" y="24" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#111827">Penner Farms - SE 27-8-13 (site 2) - ALL_INVERTERS - All inverters offline</text>
+<line x1="60" y1="330" x2="1060" y2="330" stroke="#374151" />
+<line x1="60" y1="40" x2="60" y2="330" stroke="#374151" />
+<line x1="60" y1="330.0" x2="1060" y2="330.0" stroke="#e5e7eb" />
+<text x="52" y="334.0" text-anchor="end" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#4b5563">0</text>
+<line x1="60" y1="281.7" x2="1060" y2="281.7" stroke="#e5e7eb" />
+<line x1="60" y1="233.3" x2="1060" y2="233.3" stroke="#e5e7eb" />
+<text x="52" y="237.3" text-anchor="end" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#4b5563">50</text>
+<line x1="60" y1="185.0" x2="1060" y2="185.0" stroke="#e5e7eb" />
+<line x1="60" y1="136.7" x2="1060" y2="136.7" stroke="#e5e7eb" />
+<text x="52" y="140.7" text-anchor="end" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#4b5563">100</text>
+<line x1="60" y1="88.3" x2="1060" y2="88.3" stroke="#e5e7eb" />
+<line x1="60" y1="40.0" x2="1060" y2="40.0" stroke="#e5e7eb" />
+<text x="52" y="44.0" text-anchor="end" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#4b5563">150</text>
+<text x="60.0" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">2025-12-11</text>
+<text x="160.0" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">12-12</text>
+<text x="260.0" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">12-13</text>
+<text x="360.0" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">12-14</text>
+<text x="460.0" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">12-15</text>
+<text x="560.0" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">12-16</text>
+<text x="660.0" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">12-17</text>
+<text x="760.0" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">12-18</text>
+<text x="860.0" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">12-19</text>
+<text x="960.0" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">12-20</text>
+<text x="1060.0" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">2025-12-21</text>
+<polyline fill="none" stroke="#2563eb" stroke-width="2" points="160.0,303.4 260.0,306.1 360.0,279.5 460.0,283.8" />
+<polyline fill="none" stroke="#2563eb" stroke-width="2" points="660.0,329.1 760.0,242.1 860.0,155.3 960.0,149.4 1060.0,278.3" />
+<polyline fill="none" stroke="#2563eb" stroke-width="2" stroke-dasharray="6 4" points="460.0,283.8 560.0,330.0 660.0,329.1" />
+<circle cx="460.0" cy="283.8" r="4" fill="white" stroke="#2563eb" stroke-width="2" />
+<circle cx="660.0" cy="329.1" r="4" fill="white" stroke="#2563eb" stroke-width="2" />
+<polyline fill="none" stroke="#dc2626" stroke-width="2" points="160.0,302.4 260.0,303.5 360.0,273.8 460.0,279.5" />
+<polyline fill="none" stroke="#dc2626" stroke-width="2" points="660.0,329.0 760.0,234.2 860.0,146.7 960.0,131.8 1060.0,277.5" />
+<polyline fill="none" stroke="#dc2626" stroke-width="2" stroke-dasharray="6 4" points="460.0,279.5 560.0,330.0 660.0,329.0" />
+<circle cx="460.0" cy="279.5" r="4" fill="white" stroke="#dc2626" stroke-width="2" />
+<circle cx="660.0" cy="329.0" r="4" fill="white" stroke="#dc2626" stroke-width="2" />
+<polyline fill="none" stroke="#16a34a" stroke-width="2" points="160.0,300.6 260.0,304.4 360.0,274.2 460.0,280.2" />
+<polyline fill="none" stroke="#16a34a" stroke-width="2" points="660.0,329.0 760.0,235.6 860.0,151.7 960.0,137.0 1060.0,277.5" />
+<polyline fill="none" stroke="#16a34a" stroke-width="2" stroke-dasharray="6 4" points="460.0,280.2 560.0,330.0 660.0,329.0" />
+<circle cx="460.0" cy="280.2" r="4" fill="white" stroke="#16a34a" stroke-width="2" />
+<circle cx="660.0" cy="329.0" r="4" fill="white" stroke="#16a34a" stroke-width="2" />
+<rect x="60" y="368" width="12" height="4" fill="#2563eb" />
+<text x="78" y="372" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#111827">Symo 24.0-3 480 (1) (636559)</text>
+<rect x="380" y="368" width="12" height="4" fill="#dc2626" />
+<text x="398" y="372" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#111827">Symo 24.0-3 480 (2) (636562)</text>
+<rect x="700" y="368" width="12" height="4" fill="#16a34a" />
+<text x="718" y="372" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#111827">Symo 24.0-3 480 (3) (636570)</text>
+</svg>

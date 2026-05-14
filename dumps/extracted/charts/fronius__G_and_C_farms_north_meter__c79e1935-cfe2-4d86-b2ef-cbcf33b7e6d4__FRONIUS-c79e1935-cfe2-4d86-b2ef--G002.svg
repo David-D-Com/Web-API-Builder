@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="420" viewBox="0 0 1080 420">
+<rect width="100%" height="100%" fill="white" />
+<text x="60" y="24" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#111827">G and C farms north meter - Symo  24.0-3 480 (7) (61C098) and Symo Advanced 24.0-3 480 (2) (B030EC) - Multiple inverters offline</text>
+<line x1="60" y1="330" x2="1060" y2="330" stroke="#374151" />
+<line x1="60" y1="40" x2="60" y2="330" stroke="#374151" />
+<line x1="60" y1="330.0" x2="1060" y2="330.0" stroke="#e5e7eb" />
+<text x="52" y="334.0" text-anchor="end" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#4b5563">0</text>
+<line x1="60" y1="305.8" x2="1060" y2="305.8" stroke="#e5e7eb" />
+<line x1="60" y1="281.7" x2="1060" y2="281.7" stroke="#e5e7eb" />
+<text x="52" y="285.7" text-anchor="end" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#4b5563">50</text>
+<line x1="60" y1="257.5" x2="1060" y2="257.5" stroke="#e5e7eb" />
+<line x1="60" y1="233.3" x2="1060" y2="233.3" stroke="#e5e7eb" />
+<text x="52" y="237.3" text-anchor="end" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#4b5563">100</text>
+<line x1="60" y1="209.2" x2="1060" y2="209.2" stroke="#e5e7eb" />
+<line x1="60" y1="185.0" x2="1060" y2="185.0" stroke="#e5e7eb" />
+<text x="52" y="189.0" text-anchor="end" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#4b5563">150</text>
+<line x1="60" y1="160.8" x2="1060" y2="160.8" stroke="#e5e7eb" />
+<line x1="60" y1="136.7" x2="1060" y2="136.7" stroke="#e5e7eb" />
+<text x="52" y="140.7" text-anchor="end" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#4b5563">200</text>
+<line x1="60" y1="112.5" x2="1060" y2="112.5" stroke="#e5e7eb" />
+<line x1="60" y1="88.3" x2="1060" y2="88.3" stroke="#e5e7eb" />
+<text x="52" y="92.3" text-anchor="end" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#4b5563">250</text>
+<line x1="60" y1="64.2" x2="1060" y2="64.2" stroke="#e5e7eb" />
+<line x1="60" y1="40.0" x2="1060" y2="40.0" stroke="#e5e7eb" />
+<text x="52" y="44.0" text-anchor="end" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#4b5563">300</text>
+<text x="60.0" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">2022-06-20</text>
+<text x="112.6" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">06-21</text>
+<text x="165.3" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">06-22</text>
+<text x="217.9" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">06-23</text>
+<text x="270.5" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">06-24</text>
+<text x="323.2" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">06-25</text>
+<text x="375.8" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">06-26</text>
+<text x="428.4" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">06-27</text>
+<text x="481.1" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">06-28</text>
+<text x="533.7" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">06-29</text>
+<text x="586.3" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">06-30</text>
+<text x="638.9" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">07-01</text>
+<text x="691.6" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">07-02</text>
+<text x="744.2" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">07-03</text>
+<text x="796.8" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">07-04</text>
+<text x="849.5" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">07-05</text>
+<text x="902.1" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">07-06</text>
+<text x="954.7" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">07-07</text>
+<text x="1007.4" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">07-08</text>
+<text x="1060.0" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">2022-07-09</text>
+<polyline fill="none" stroke="#2563eb" stroke-width="2" points="60.0,266.1 112.6,109.9 165.3,116.0 217.9,123.8 270.5,239.9 323.2,139.7 375.8,106.8 428.4,107.8 481.1,120.4 533.7,125.6 586.3,147.7 638.9,109.2 691.6,130.2 744.2,247.9 796.8,189.4 849.5,118.3 902.1,128.3 954.7,135.8 1007.4,113.4 1060.0,119.1" />
+<polyline fill="none" stroke="#dc2626" stroke-width="2" points="60.0,266.3 112.6,112.9 165.3,118.9 217.9,123.9 270.5,240.3 323.2,141.7 375.8,110.0 428.4,111.0 481.1,123.6 533.7,128.2 586.3,149.1 638.9,112.3 691.6,133.5 744.2,248.2 796.8,190.8 849.5,121.0 902.1,131.6 954.7,138.2 1007.4,116.4 1060.0,122.4" />
+<polyline fill="none" stroke="#16a34a" stroke-width="2" points="60.0,266.1 112.6,109.2 165.3,115.6 217.9,120.6 270.5,240.0 323.2,139.9 375.8,106.3 428.4,111.0 481.1,120.1 533.7,125.1 586.3,146.5" />
+<polyline fill="none" stroke="#16a34a" stroke-width="2" stroke-dasharray="6 4" points="586.3,146.5 638.9,330.0 691.6,330.0 744.2,330.0 796.8,330.0 849.5,330.0 902.1,330.0 954.7,330.0 1007.4,330.0 1060.0,119.1" />
+<circle cx="586.3" cy="146.5" r="4" fill="white" stroke="#16a34a" stroke-width="2" />
+<circle cx="1060.0" cy="119.1" r="4" fill="white" stroke="#16a34a" stroke-width="2" />
+<circle cx="586.3" cy="146.5" r="4" fill="#16a34a" stroke="#16a34a" stroke-width="2" />
+<circle cx="586.3" cy="146.5" r="4" fill="#16a34a" stroke="#16a34a" stroke-width="2" />
+<circle cx="586.3" cy="146.5" r="4" fill="#16a34a" stroke="#16a34a" stroke-width="2" />
+<circle cx="586.3" cy="146.5" r="4" fill="#16a34a" stroke="#16a34a" stroke-width="2" />
+<circle cx="586.3" cy="146.5" r="4" fill="#16a34a" stroke="#16a34a" stroke-width="2" />
+<circle cx="586.3" cy="146.5" r="4" fill="#16a34a" stroke="#16a34a" stroke-width="2" />
+<circle cx="586.3" cy="146.5" r="4" fill="#16a34a" stroke="#16a34a" stroke-width="2" />
+<circle cx="1060.0" cy="119.1" r="4" fill="#16a34a" stroke="#16a34a" stroke-width="2" />
+<polyline fill="none" stroke="#d97706" stroke-width="2" points="60.0,264.1 112.6,108.1 165.3,113.7 217.9,118.9 270.5,237.1 323.2,136.8 375.8,105.3 428.4,106.2 481.1,119.0 533.7,123.3 586.3,144.5 638.9,107.3 691.6,130.8 744.2,245.4 796.8,187.4 849.5,116.3 902.1,127.2 954.7,133.5 1007.4,111.8 1060.0,118.1" />
+<polyline fill="none" stroke="#7c3aed" stroke-width="2" points="60.0,263.5 112.6,110.1 165.3,115.6 217.9,120.7 270.5,237.4 323.2,138.0 375.8,107.5 428.4,108.4 481.1,120.7 533.7,124.9 586.3,146.5 638.9,113.1 691.6,129.3 744.2,244.7 796.8,188.5 849.5,117.8 902.1,129.1 954.7,134.8 1007.4,113.9 1060.0,120.5" />
+<polyline fill="none" stroke="#0891b2" stroke-width="2" points="60.0,266.6 112.6,113.1 165.3,119.2 217.9,124.4 270.5,241.1 323.2,142.7 375.8,110.4 428.4,111.4 481.1,126.0 533.7,128.7 586.3,149.7 638.9,112.8 691.6,133.4 744.2,248.5 796.8,191.2 849.5,121.8 902.1,131.7 954.7,139.3 1007.4,117.1 1060.0,123.1" />
+<polyline fill="none" stroke="#be185d" stroke-width="2" points="60.0,265.5 112.6,108.9 165.3,133.9 217.9,121.8" />
+<polyline fill="none" stroke="#be185d" stroke-width="2" points="323.2,329.6 375.8,107.5 428.4,112.0 481.1,182.2 533.7,189.3 586.3,250.7 638.9,173.4 691.6,243.7" />
+<polyline fill="none" stroke="#be185d" stroke-width="2" points="849.5,119.8 902.1,129.1 954.7,137.1 1007.4,112.7 1060.0,124.8" />
+<polyline fill="none" stroke="#be185d" stroke-width="2" stroke-dasharray="6 4" points="217.9,121.8 270.5,330.0 323.2,329.6" />
+<polyline fill="none" stroke="#be185d" stroke-width="2" stroke-dasharray="6 4" points="691.6,243.7 744.2,330.0 796.8,330.0 849.5,119.8" />
+<circle cx="217.9" cy="121.8" r="4" fill="white" stroke="#be185d" stroke-width="2" />
+<circle cx="323.2" cy="329.6" r="4" fill="white" stroke="#be185d" stroke-width="2" />
+<circle cx="691.6" cy="243.7" r="4" fill="white" stroke="#be185d" stroke-width="2" />
+<circle cx="849.5" cy="119.8" r="4" fill="white" stroke="#be185d" stroke-width="2" />
+<circle cx="691.6" cy="243.7" r="4" fill="#be185d" stroke="#be185d" stroke-width="2" />
+<rect x="60" y="368" width="12" height="4" fill="#2563eb" />
+<text x="78" y="372" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#111827">Symo  24.0-3 480 (1) (61C069)</text>
+<rect x="380" y="368" width="12" height="4" fill="#dc2626" />
+<text x="398" y="372" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#111827">Symo  24.0-3 480 (3) (61C073)</text>
+<rect x="700" y="368" width="12" height="4" fill="#16a34a" />
+<text x="718" y="372" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#111827">Symo  24.0-3 480 (7) (61C098)</text>
+<rect x="60" y="384" width="12" height="4" fill="#d97706" />
+<text x="78" y="388" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#111827">Symo 24.0-3 480 (4) (61C07C)</text>
+<rect x="380" y="384" width="12" height="4" fill="#7c3aed" />
+<text x="398" y="388" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#111827">Symo 24.0-3 480 (5) (61C085)</text>
+<rect x="700" y="384" width="12" height="4" fill="#0891b2" />
+<text x="718" y="388" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#111827">Symo 24.0-3 480 (6) (61C08F)</text>
+<rect x="60" y="400" width="12" height="4" fill="#be185d" />
+<text x="78" y="404" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#111827">Symo Advanced 24.0-3 480 (2) (B030EC)</text>
+</svg>

@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="420" viewBox="0 0 1080 420">
+<rect width="100%" height="100%" fill="white" />
+<text x="60" y="24" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#111827">Penner Farms - SE 27-8-13 (site 2) - Symo 24.0-3 480 (1) (636559) - Sustained underperformance</text>
+<line x1="60" y1="330" x2="1060" y2="330" stroke="#374151" />
+<line x1="60" y1="40" x2="60" y2="330" stroke="#374151" />
+<line x1="60" y1="330.0" x2="1060" y2="330.0" stroke="#e5e7eb" />
+<text x="52" y="334.0" text-anchor="end" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#4b5563">0</text>
+<line x1="60" y1="281.7" x2="1060" y2="281.7" stroke="#e5e7eb" />
+<line x1="60" y1="233.3" x2="1060" y2="233.3" stroke="#e5e7eb" />
+<text x="52" y="237.3" text-anchor="end" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#4b5563">50</text>
+<line x1="60" y1="185.0" x2="1060" y2="185.0" stroke="#e5e7eb" />
+<line x1="60" y1="136.7" x2="1060" y2="136.7" stroke="#e5e7eb" />
+<text x="52" y="140.7" text-anchor="end" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#4b5563">100</text>
+<line x1="60" y1="88.3" x2="1060" y2="88.3" stroke="#e5e7eb" />
+<line x1="60" y1="40.0" x2="1060" y2="40.0" stroke="#e5e7eb" />
+<text x="52" y="44.0" text-anchor="end" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#4b5563">150</text>
+<text x="60.0" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">2024-12-30</text>
+<text x="143.3" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">12-31</text>
+<text x="226.7" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">01-01</text>
+<text x="310.0" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">01-02</text>
+<text x="393.3" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">01-03</text>
+<text x="476.7" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">01-04</text>
+<text x="560.0" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">01-05</text>
+<text x="643.3" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">01-06</text>
+<text x="726.7" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">01-07</text>
+<text x="810.0" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">01-08</text>
+<text x="893.3" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">01-09</text>
+<text x="976.7" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">01-10</text>
+<text x="1060.0" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">2025-01-11</text>
+<polyline fill="none" stroke="#2563eb" stroke-width="2" points="60.0,288.8 143.3,318.5 226.7,316.9 310.0,317.0 393.3,317.4 476.7,294.2 560.0,262.7 643.3,292.7 726.7,145.1 810.0,274.3 893.3,103.1 976.7,282.5 1060.0,300.4" />
+<polyline fill="none" stroke="#dc2626" stroke-width="2" points="60.0,286.4 143.3,318.4 226.7,316.2 310.0,316.4 393.3,314.7 476.7,246.8 560.0,185.5 643.3,258.1 726.7,77.6 810.0,272.5 893.3,89.0 976.7,281.4 1060.0,299.9" />
+<polyline fill="none" stroke="#16a34a" stroke-width="2" points="60.0,286.6 143.3,318.3 226.7,316.0 310.0,316.3 393.3,314.6 476.7,247.9 560.0,188.1 643.3,258.7 726.7,85.2 810.0,272.9 893.3,94.6 976.7,281.5 1060.0,299.7" />
+<rect x="60" y="368" width="12" height="4" fill="#2563eb" />
+<text x="78" y="372" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#111827">Symo 24.0-3 480 (1) (636559)</text>
+<rect x="380" y="368" width="12" height="4" fill="#dc2626" />
+<text x="398" y="372" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#111827">Symo 24.0-3 480 (2) (636562)</text>
+<rect x="700" y="368" width="12" height="4" fill="#16a34a" />
+<text x="718" y="372" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#111827">Symo 24.0-3 480 (3) (636570)</text>
+</svg>

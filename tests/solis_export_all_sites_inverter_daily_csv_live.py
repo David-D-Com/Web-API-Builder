@@ -140,6 +140,17 @@ def build_parser() -> argparse.ArgumentParser:
         action="store_true",
         help="Write the shared normalized schema directly instead of vendor-specific columns.",
     )
+    parser.add_argument(
+        "--years-back",
+        type=int,
+        default=2,
+        help="How many years of monthly history to export. Default: 2.",
+    )
+    parser.add_argument(
+        "--output-subdir",
+        default="",
+        help="Optional subdirectory under dumps/ to write output files into, such as raw or normalized.",
+    )
     return parser
 
 
@@ -147,9 +158,11 @@ def main(argv: list[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
     repo_root = Path(__file__).resolve().parent.parent
     dumps_dir = repo_root / "dumps"
+    if args.output_subdir:
+        dumps_dir = dumps_dir / args.output_subdir
 
     today = dt.date.today()
-    start = dt.date(today.year - 2, today.month, 1)
+    start = dt.date(today.year - max(args.years_back, 1), today.month, 1)
     months = month_range(start.year, start.month, today.year, today.month)
 
     session = build_session()

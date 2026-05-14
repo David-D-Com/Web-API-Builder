@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="420" viewBox="0 0 1080 420">
+<rect width="100%" height="100%" fill="white" />
+<text x="60" y="24" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#111827">NE19-8-11 - Symo Advanced 24.0-3 480 (4) (9F82F9) and Symo Advanced 24.0-3 480 (5) (3318AD) - Inverter outage / near-zero production</text>
+<line x1="60" y1="330" x2="1060" y2="330" stroke="#374151" />
+<line x1="60" y1="40" x2="60" y2="330" stroke="#374151" />
+<line x1="60" y1="330.0" x2="1060" y2="330.0" stroke="#e5e7eb" />
+<text x="52" y="334.0" text-anchor="end" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#4b5563">0</text>
+<line x1="60" y1="301.0" x2="1060" y2="301.0" stroke="#e5e7eb" />
+<line x1="60" y1="272.0" x2="1060" y2="272.0" stroke="#e5e7eb" />
+<text x="52" y="276.0" text-anchor="end" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#4b5563">50</text>
+<line x1="60" y1="243.0" x2="1060" y2="243.0" stroke="#e5e7eb" />
+<line x1="60" y1="214.0" x2="1060" y2="214.0" stroke="#e5e7eb" />
+<text x="52" y="218.0" text-anchor="end" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#4b5563">100</text>
+<line x1="60" y1="185.0" x2="1060" y2="185.0" stroke="#e5e7eb" />
+<line x1="60" y1="156.0" x2="1060" y2="156.0" stroke="#e5e7eb" />
+<text x="52" y="160.0" text-anchor="end" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#4b5563">150</text>
+<line x1="60" y1="127.0" x2="1060" y2="127.0" stroke="#e5e7eb" />
+<line x1="60" y1="98.0" x2="1060" y2="98.0" stroke="#e5e7eb" />
+<text x="52" y="102.0" text-anchor="end" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#4b5563">200</text>
+<line x1="60" y1="69.0" x2="1060" y2="69.0" stroke="#e5e7eb" />
+<line x1="60" y1="40.0" x2="1060" y2="40.0" stroke="#e5e7eb" />
+<text x="52" y="44.0" text-anchor="end" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#4b5563">250</text>
+<text x="60.0" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">2025-05-20</text>
+<text x="143.3" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">05-21</text>
+<text x="226.7" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">05-22</text>
+<text x="310.0" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">05-23</text>
+<text x="393.3" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">05-24</text>
+<text x="476.7" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">05-25</text>
+<text x="560.0" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">05-26</text>
+<text x="643.3" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">05-27</text>
+<text x="726.7" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">05-28</text>
+<text x="810.0" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">05-29</text>
+<text x="893.3" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">05-30</text>
+<text x="976.7" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">05-31</text>
+<text x="1060.0" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">2025-06-01</text>
+<polyline fill="none" stroke="#2563eb" stroke-width="2" points="60.0,163.1 143.3,172.0 226.7,164.6 310.0,284.9 393.3,194.9 476.7,117.1 560.0,127.4 643.3,124.0 726.7,126.4 810.0,118.6 893.3,187.3 976.7,141.8 1060.0,119.4" />
+<polyline fill="none" stroke="#dc2626" stroke-width="2" points="60.0,165.8 143.3,174.3 226.7,166.4 310.0,285.5 393.3,198.2 476.7,119.4 560.0,127.9 643.3,124.0 726.7,130.4 810.0,123.7 893.3,119.8 976.7,145.5 1060.0,124.8" />
+<polyline fill="none" stroke="#16a34a" stroke-width="2" points="60.0,166.0 143.3,174.8 226.7,165.6 310.0,285.2 393.3,199.8 476.7,120.1 560.0,128.2 643.3,125.4 726.7,131.5 810.0,123.1 893.3,121.0 976.7,144.4 1060.0,125.2" />
+<polyline fill="none" stroke="#d97706" stroke-width="2" points="60.0,163.0 143.3,171.5 226.7,163.9 310.0,251.9 393.3,314.5" />
+<polyline fill="none" stroke="#d97706" stroke-width="2" points="726.7,126.9 810.0,117.3 893.3,114.5 976.7,141.5 1060.0,120.6" />
+<polyline fill="none" stroke="#d97706" stroke-width="2" stroke-dasharray="6 4" points="393.3,314.5 476.7,330.0 560.0,330.0 643.3,330.0 726.7,126.9" />
+<circle cx="393.3" cy="314.5" r="4" fill="white" stroke="#d97706" stroke-width="2" />
+<circle cx="726.7" cy="126.9" r="4" fill="white" stroke="#d97706" stroke-width="2" />
+<circle cx="393.3" cy="314.5" r="4" fill="#d97706" stroke="#d97706" stroke-width="2" />
+<circle cx="393.3" cy="314.5" r="4" fill="#d97706" stroke="#d97706" stroke-width="2" />
+<polyline fill="none" stroke="#7c3aed" stroke-width="2" points="60.0,132.0 143.3,138.1 226.7,117.9 310.0,225.1 393.3,309.1" />
+<polyline fill="none" stroke="#7c3aed" stroke-width="2" points="726.7,82.8 810.0,70.3 893.3,69.4 976.7,94.8 1060.0,80.8" />
+<polyline fill="none" stroke="#7c3aed" stroke-width="2" stroke-dasharray="6 4" points="393.3,309.1 476.7,330.0 560.0,330.0 643.3,330.0 726.7,82.8" />
+<circle cx="393.3" cy="309.1" r="4" fill="white" stroke="#7c3aed" stroke-width="2" />
+<circle cx="726.7" cy="82.8" r="4" fill="white" stroke="#7c3aed" stroke-width="2" />
+<circle cx="393.3" cy="309.1" r="4" fill="#7c3aed" stroke="#7c3aed" stroke-width="2" />
+<circle cx="393.3" cy="309.1" r="4" fill="#7c3aed" stroke="#7c3aed" stroke-width="2" />
+<rect x="60" y="368" width="12" height="4" fill="#2563eb" />
+<text x="78" y="372" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#111827">Symo Advanced 24.0-3 480 (1) (0FEDFF)</text>
+<rect x="380" y="368" width="12" height="4" fill="#dc2626" />
+<text x="398" y="372" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#111827">Symo Advanced 24.0-3 480 (2) (708658)</text>
+<rect x="700" y="368" width="12" height="4" fill="#16a34a" />
+<text x="718" y="372" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#111827">Symo Advanced 24.0-3 480 (3) (C5E0C3)</text>
+<rect x="60" y="384" width="12" height="4" fill="#d97706" />
+<text x="78" y="388" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#111827">Symo Advanced 24.0-3 480 (4) (9F82F9)</text>
+<rect x="380" y="384" width="12" height="4" fill="#7c3aed" />
+<text x="398" y="388" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#111827">Symo Advanced 24.0-3 480 (5) (3318AD)</text>
+</svg>

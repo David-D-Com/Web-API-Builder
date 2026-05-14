@@ -53,9 +53,9 @@ def parse_device_map(metadata: dict[str, Any]) -> list[dict[str, str]]:
     return devices
 
 
-def export_site_rows(client: Any, pv_system_id: str, pv_system_name: str) -> list[dict[str, Any]]:
+def export_site_rows(client: Any, pv_system_id: str, pv_system_name: str, *, years_back: int) -> list[dict[str, Any]]:
     today = date.today()
-    start = date(today.year - 2, today.month, 1)
+    start = date(today.year - years_back, today.month, 1)
     months = month_range(start.year, start.month, today.year, today.month)
 
     metadata_probe = client.get_analysis_chart(
@@ -149,6 +149,17 @@ def build_parser() -> argparse.ArgumentParser:
         action="store_true",
         help="Write the shared normalized schema directly instead of vendor-specific columns.",
     )
+    parser.add_argument(
+        "--years-back",
+        type=int,
+        default=2,
+        help="How many years of monthly history to export. Default: 2.",
+    )
+    parser.add_argument(
+        "--output-subdir",
+        default="",
+        help="Optional subdirectory under dumps/ to write output files into, such as raw or normalized.",
+    )
     return parser
 
 
@@ -165,6 +176,8 @@ def main(argv: list[str] | None = None) -> int:
         raise SystemExit("No Fronius credentials available. Use Windows Credential Manager or env vars.")
 
     dumps_dir = repo_root / "dumps"
+    if args.output_subdir:
+        dumps_dir = dumps_dir / args.output_subdir
     client = FroniusClient().initialize(username=username, password=password)
     systems_payload = client.get_pv_systems_for_list_view()
     systems = systems_payload.get("data", [])
@@ -178,7 +191,7 @@ def main(argv: list[str] | None = None) -> int:
         pv_system_name = str(system.get("PvSystemName") or f"site_{index}")
         if not pv_system_id:
             continue
-        rows = export_site_rows(client, pv_system_id, pv_system_name)
+        rows = export_site_rows(client, pv_system_id, pv_system_name, years_back=max(args.years_back, 1))
         if not rows:
             print(f"[{index}/{len(systems)}] Skipped {pv_system_name}: no inverter output rows.")
             continue

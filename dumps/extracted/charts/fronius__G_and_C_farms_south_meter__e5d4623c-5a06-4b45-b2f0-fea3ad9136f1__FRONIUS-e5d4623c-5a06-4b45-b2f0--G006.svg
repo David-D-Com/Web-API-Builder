@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="420" viewBox="0 0 1080 420">
+<rect width="100%" height="100%" fill="white" />
+<text x="60" y="24" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#111827">G and C farms south meter - Symo  Advanced 24.0-3 480 (4) (2344E5) and Symo Advanced 24.0-3 480 (5) (2344EE) - Sustained underperformance</text>
+<line x1="60" y1="330" x2="1060" y2="330" stroke="#374151" />
+<line x1="60" y1="40" x2="60" y2="330" stroke="#374151" />
+<line x1="60" y1="330.0" x2="1060" y2="330.0" stroke="#e5e7eb" />
+<text x="52" y="334.0" text-anchor="end" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#4b5563">0</text>
+<line x1="60" y1="281.7" x2="1060" y2="281.7" stroke="#e5e7eb" />
+<line x1="60" y1="233.3" x2="1060" y2="233.3" stroke="#e5e7eb" />
+<text x="52" y="237.3" text-anchor="end" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#4b5563">50</text>
+<line x1="60" y1="185.0" x2="1060" y2="185.0" stroke="#e5e7eb" />
+<line x1="60" y1="136.7" x2="1060" y2="136.7" stroke="#e5e7eb" />
+<text x="52" y="140.7" text-anchor="end" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#4b5563">100</text>
+<line x1="60" y1="88.3" x2="1060" y2="88.3" stroke="#e5e7eb" />
+<line x1="60" y1="40.0" x2="1060" y2="40.0" stroke="#e5e7eb" />
+<text x="52" y="44.0" text-anchor="end" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#4b5563">150</text>
+<text x="60.0" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">2024-11-25</text>
+<text x="143.3" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">11-26</text>
+<text x="226.7" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">11-27</text>
+<text x="310.0" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">11-28</text>
+<text x="393.3" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">11-29</text>
+<text x="476.7" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">11-30</text>
+<text x="560.0" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">12-01</text>
+<text x="643.3" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">12-02</text>
+<text x="726.7" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">12-03</text>
+<text x="810.0" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">12-04</text>
+<text x="893.3" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">12-05</text>
+<text x="976.7" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">12-06</text>
+<text x="1060.0" y="348" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#4b5563">2024-12-07</text>
+<polyline fill="none" stroke="#2563eb" stroke-width="2" points="60.0,298.9 143.3,301.4 226.7,307.0 310.0,296.4 393.3,302.7 476.7,287.4 560.0,286.5 643.3,239.4 726.7,203.3 810.0,190.1 893.3,157.3 976.7,197.6 1060.0,244.9" />
+<polyline fill="none" stroke="#dc2626" stroke-width="2" points="60.0,298.0 143.3,294.4 226.7,306.8 310.0,288.6 393.3,297.5 476.7,263.4 560.0,258.7 643.3,207.1 726.7,194.8 810.0,178.0 893.3,97.5 976.7,175.1 1060.0,235.1" />
+<polyline fill="none" stroke="#16a34a" stroke-width="2" points="60.0,296.4 143.3,294.2 226.7,307.0 310.0,286.2 393.3,298.5 476.7,256.9 560.0,249.2 643.3,181.0 726.7,191.3 810.0,176.7 893.3,117.4 976.7,185.5 1060.0,240.0" />
+<polyline fill="none" stroke="#d97706" stroke-width="2" points="60.0,288.7 143.3,281.2 226.7,302.0 310.0,282.3 393.3,295.1 476.7,234.8 560.0,227.6 643.3,157.2 726.7,185.1 810.0,172.7 893.3,96.4 976.7,175.9 1060.0,235.2" />
+<polyline fill="none" stroke="#7c3aed" stroke-width="2" points="60.0,297.6 143.3,301.2 226.7,306.7 310.0,297.3 393.3,302.4 476.7,291.7 560.0,293.2 643.3,244.8 726.7,210.9 810.0,186.0 893.3,160.3 976.7,199.8 1060.0,245.8" />
+<polyline fill="none" stroke="#0891b2" stroke-width="2" points="60.0,295.0 143.3,296.3 226.7,304.0 310.0,295.8 393.3,302.8 476.7,284.3 560.0,277.9 643.3,189.6 726.7,203.0 810.0,186.5 893.3,151.8 976.7,196.4 1060.0,243.7" />
+<polyline fill="none" stroke="#be185d" stroke-width="2" points="60.0,291.4 143.3,292.7 226.7,302.8 310.0,287.1 393.3,295.9 476.7,260.3 560.0,256.4 643.3,188.7 726.7,200.7 810.0,185.2 893.3,153.2 976.7,195.3 1060.0,244.3" />
+<rect x="60" y="368" width="12" height="4" fill="#2563eb" />
+<text x="78" y="372" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#111827">Symo  Advanced 24.0-3 480 (4) (2344E5)</text>
+<rect x="380" y="368" width="12" height="4" fill="#dc2626" />
+<text x="398" y="372" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#111827">Symo 24.0-3 480 (1) (ECDEE1)</text>
+<rect x="700" y="368" width="12" height="4" fill="#16a34a" />
+<text x="718" y="372" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#111827">Symo Advanced 24.0-3 480 (2) (2344D2)</text>
+<rect x="60" y="384" width="12" height="4" fill="#d97706" />
+<text x="78" y="388" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#111827">Symo Advanced 24.0-3 480 (3) (2344DB)</text>
+<rect x="380" y="384" width="12" height="4" fill="#7c3aed" />
+<text x="398" y="388" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#111827">Symo Advanced 24.0-3 480 (5) (2344EE)</text>
+<rect x="700" y="384" width="12" height="4" fill="#0891b2" />
+<text x="718" y="388" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#111827">Symo Advanced 24.0-3 480 (6) (D2487C)</text>
+<rect x="60" y="400" width="12" height="4" fill="#be185d" />
+<text x="78" y="404" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#111827">Symo Advanced 24.0-3 480 (7) (D3E7E7)</text>
+</svg>
