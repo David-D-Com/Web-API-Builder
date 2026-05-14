@@ -1,0 +1,32 @@
+id: fronius
+name: Fronius
+description: Fronius solar
+module:
+  manifest_version: 1
+  package_path: python/src/fronius
+  client_file: python/src/fronius/client.py
+  client_class: FroniusClient
+  processed_capture_dir: captures_processed\fronius
+  browser:
+    base_url: https://www.solarweb.com
+  capture:
+    url_contains: []
+    domain_contains: []
+    content_kinds:
+    - json
+    mode: last
+commands:
+  run_tests: python .\tests\fronius_smoke.py
+  open_browser: ''
+  process_captures: ''
+pages:
+- name: Base
+  route: /
+- name: Dashboard
+  route: /PvSystems/Widgets
+- name: System Overview
+  route: /PvSystems/PvSystem?pvSystemId=c79e1935-cfe2-4d86-b2ef-cbcf33b7e6d4
+- name: Realtime
+  route: /PvSystems/Realtime?pvSystemId=c79e1935-cfe2-4d86-b2ef-cbcf33b7e6d4
+- name: Production Chart
+  route: /Chart/Chart?pvSystemId=c79e1935-cfe2-4d86-b2ef-cbcf33b7e6d4

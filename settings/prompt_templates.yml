@@ -1,0 +1,346 @@
+prompts:
+  - name: "1: Implement Captures Into Module"
+    description: Build or extend the module from the selected captures, aiming for the broadest useful endpoint coverage.
+    text: |
+      You are helping extend a Python API module from captured browser/API traffic.
+
+      You have been given:
+      1. A ZIP of the current project or current module
+      2. A folder of captured requests
+         - This may be raw HAR files, HAR-derived JSON files, or one-file-per-request captures
+      3. Optionally, notes describing what user actions produced the captures
+
+      Your mission:
+      Read the existing project, inspect the captures, determine which calls are already implemented, and then implement the missing useful API calls into the Python module cleanly and consistently.
+
+      Context about the project shape:
+      - This project may contain:
+        - a reusable Python module under something like `python/src/<module_name>/`
+        - tests and smoke scripts under `tests/`
+        - helper/browser tooling under `scripts/`
+        - builder/workbench config under `settings/`
+      - Your main target is the reusable Python module, not the builder GUI, unless builder-related metadata or test hooks must also be updated
+      - Do not treat raw captures as production assets to keep in the module/package
+      - Do not bake credentials into code
+
+      What I want you to do:
+
+      Phase 1: Understand the existing project
+      1. Inspect the ZIP contents
+      2. Identify:
+         - the main reusable client/module
+         - the current auth/session/signing flow
+         - whether the module already exposes a standard `initialize()` entrypoint
+         - existing endpoint methods
+         - any caching layer
+         - existing tests/smoke tests
+         - any docs or usage files
+      3. Summarize the current module shape before changing anything
+
+      Phase 2: Analyze captures
+      1. Read the captured requests
+      2. Group them by endpoint/path
+      3. Ignore obvious junk/noise where appropriate:
+         - static assets
+         - maps/telemetry
+         - unrelated third-party calls
+         - duplicate polling calls unless they reveal something important
+      4. Prefer JSON/API requests unless another type is clearly relevant
+      5. Deduplicate repeated calls:
+         - keep the latest/final meaningful duplicate when the request shape is effectively the same
+      6. For each useful endpoint, determine:
+         - HTTP method
+         - path
+         - required headers that actually matter
+         - request body/query params
+         - whether the endpoint is already implemented
+         - what Python method name would make sense
+
+      Phase 3: Compare captures vs existing implementation
+      Build a gap analysis:
+      - already implemented endpoints
+      - partially implemented endpoints
+      - missing endpoints worth adding
+      - endpoints that are too noisy/irrelevant to add
+
+      Phase 4: Implement/update the module
+      If an existing Python module already exists:
+      - update it in place
+      - reuse its transport/auth/session/caching helpers
+      - do not create a parallel duplicate client
+
+      If no real module exists yet:
+      - create a proper importable Python package
+      - include:
+        - client module
+        - auth/session handling
+        - basic README/usage notes
+        - smoke test entry point
+
+      Implementation rules:
+      - The target output must be a real importable Python module/package for talking to the target web application
+      - Do not return Flask/FastAPI server apps, demo web servers, mocked endpoint handlers, or hard-coded fake response data
+      - Standardize module setup around `client.initialize(...)` so smoke tests and future tooling can use one consistent entrypoint
+      - If login/auth is required, `initialize()` should perform that setup using provided credentials or the module's existing credential-loading approach
+      - If browser automation is relevant to the module, prefer adding an optional browser bootstrap hook such as `initialize_browser_page(...)` rather than burying login logic in random helper code
+      - Add clean, parameterized client methods
+      - Prefer semantic method names over raw endpoint names
+      - Keep low-level request logic centralized
+      - Reuse existing auth/signing/session code
+      - Add concise comments/docstrings where behavior is not obvious
+      - Keep code system-agnostic unless a file is explicitly platform-specific
+      - Avoid overengineering
+      - Make the smallest clean change set that adds the missing support
+
+      Caching rules:
+      - If caching already exists, integrate the new endpoints into it
+      - Historical/stable endpoints should be cached
+      - Live/current-state endpoints can remain uncached or use the project’s existing policy
+      - Do not repeatedly hit the API for identical historical requests if the project already has a cache pattern
+
+      Filtering/normalization rules:
+      - If the module already trims or normalizes payloads, integrate new endpoints consistently
+      - Do not introduce a totally separate output shape unless necessary
+
+      Phase 5: Tests
+      Update or add tests.
+      Prefer:
+      - extending existing smoke/integration tests
+      - adding focused tests for new endpoint methods
+      - verifying:
+        - endpoint call succeeds
+        - expected response shape is returned
+        - parameters map correctly
+        - no obvious regressions are introduced
+
+      If the project already has helper scripts for live validation, keep them working.
+
+      Phase 6: Documentation
+      Update the relevant docs so a human can use the new methods.
+      At minimum:
+      - mention the new methods/endpoints
+      - show brief usage if appropriate
+      - keep docs aligned with the actual code
+
+      Required final output:
+      Return all of the following:
+
+      1. Existing coverage summary
+      - Which captured endpoints were already implemented
+
+      2. New implementation summary
+      - Which new methods/endpoints you added
+      - Method name -> HTTP method + endpoint path
+
+      3. Ignored/filtered capture summary
+      - Which captures you intentionally ignored
+      - Why they were ignored
+
+      4. Code changes
+      - Explain what files were changed and why
+
+      5. Test changes
+      - Explain what tests were added or updated
+
+      6. Assumptions / uncertainties
+      - Mention anything ambiguous in the captures or implementation
+
+      7. Not implemented
+      - Any useful endpoints you chose not to implement, and why
+
+      8. Endpoint inventory
+      Provide a short mapping like:
+      - `list_sites` -> `POST /api/station/list`
+      - `inverter_detail` -> `POST /api/inverter/detail`
+
+      Important behavioral guidance:
+      - Repeated requests that only differ by date/page/id usually belong in one parameterized method
+      - Do not blindly mirror every raw endpoint name into Python
+      - Prefer maintainability over raw completeness
+      - If a capture clearly belongs to a browser-only UI concern and not the reusable API, mention it but do not force it into the core module
+
+      If builder/workbench files are present:
+      - only update them if needed to keep the module discoverable/testable in the existing project flow
+      - the reusable Python module remains the primary target
+
+      Deliverable expectation:
+      I want a result that feels like a real maintainable Python API module update, not just a quick reverse-engineering dump.
+  - name: "2: Implement Captures Into Module (Short)"
+    description: Shorter implementation prompt for quicker module updates when the toolchain context is already clear.
+    text: |
+      Given the attached ZIP of the current module/repo and the attached batch of captured API requests, inspect the existing Python client, determine which endpoints are already implemented, then add the missing useful endpoints into the existing reusable Python module.
+
+      Requirements:
+      - the target output must be a real importable Python module/package for talking to the target web application
+      - do not return Flask/FastAPI server apps, demo web servers, mocked endpoint handlers, or hard-coded fake response data
+      - preserve or add a standard `client.initialize(...)` entrypoint for auth/session setup
+      - update the existing module in place
+      - reuse existing auth/session/signing/caching logic
+      - use the provided captured endpoint summary to maximize useful endpoint coverage
+      - treat the listed recommended_endpoints as the default set to implement unless there is a strong reason not to
+      - prioritize production/data endpoints over message, image, consent, login, or other likely-noise endpoints
+      - deduplicate noisy/repeated captures
+      - ignore irrelevant third-party/static noise
+      - add clean parameterized client methods
+      - if there are many chart/data variants, prefer one reusable helper plus convenience wrappers
+      - extend existing tests/smoke tests
+      - if a smoke test file exists, update it to cover the new client surface at least minimally
+      - update docs if needed
+      - preserve historical caching behavior
+      - do not embed credentials
+      - do not keep raw HAR files in the module
+
+      Return:
+      - existing endpoints already covered
+      - newly added endpoints
+      - ignored captures and why
+      - code/test/doc changes
+      - assumptions/uncertainties
+      - method name -> HTTP method + endpoint path inventory
+  - name: "3: Revise Implementation From Captures"
+    description: Improve an existing module using the selected captures, focusing on missing endpoints, wrong shapes, and weak tests.
+    text: |
+      You are revising an existing Python API module that was already generated or partially implemented from captured browser/API traffic.
+
+      You have been given:
+      1. A ZIP of the current module/repo
+      2. A selected capture session or subset of capture files
+      3. The current module code
+
+      Your job:
+      Compare the current implementation against the selected captures and improve the module so it better matches the observed API behavior.
+
+      Focus on:
+      - endpoints present in the captures but missing from the client
+      - endpoints that appear implemented but have the wrong parameters, naming, or response handling
+      - missing convenience wrappers for important production/data calls
+      - weak or missing smoke tests
+      - documentation drift if the public module surface changed
+      - if the selected capture is primarily about login/auth/session bootstrap, prioritize `initialize(...)`, session establishment, and any browser bootstrap hook before expanding unrelated data endpoints
+
+      Rules:
+      - the target output must remain a real importable Python module/package for talking to the target web application
+      - do not rewrite the module into a Flask/FastAPI server, demo web app, mocked handler layer, or hard-coded fake data source
+      - preserve or improve the standard `client.initialize(...)` entrypoint used by smoke tests and builder tooling
+      - if the captures are insufficient for a full credential submit flow, improve the module structure around initialization and clearly explain what additional capture is still needed
+      - do not remove existing useful production/data methods unless the captures prove they are wrong
+      - do not narrow an existing smoke test to something less useful just because the selected capture is smaller
+      - if login/auth evidence is incomplete, do not invent fake login code; preserve current production methods and add only minimal auth-structure improvements plus clear notes about the missing capture
+      - update the existing module in place
+      - preserve the current auth/session/signing/caching approach unless the captures prove it is wrong
+      - prefer maintainable parameterized methods over raw one-off wrappers
+      - prioritize production/data endpoints over noise
+      - ignore clearly irrelevant third-party/static requests
+      - if you find duplicate endpoints or awkward naming, improve them without unnecessary churn
+
+      Return:
+      - what was wrong or incomplete in the current module
+      - what endpoints/methods you revised or added
+      - any captures you ignored and why
+      - code/test/doc changes
+      - assumptions/uncertainties
+      - valid <<<FILE: ...>>> blocks for every file you changed
+  - name: "4: Generate Module Documentation"
+    description: Generate or update human-facing documentation for the current module, including endpoint inventory and usage examples.
+    text: |
+      You are documenting an existing Python API module.
+
+      You have been given:
+      1. A ZIP of the current module/repo
+      2. Optionally, a selected capture session that shows the endpoints this module was built from
+
+      Your job:
+      Read the current Python API module and generate or update human-facing documentation for it.
+
+      Focus on:
+      - what the module is for
+      - how to install/use it
+      - how `initialize()` should be called before using the client
+      - how authentication works at a high level
+      - what client methods/endpoints exist
+      - what parameters those methods take
+      - what the important return payloads look like
+      - any caching/filtering behavior that affects users
+      - a concise endpoint inventory mapping Python method -> HTTP method + endpoint path
+
+      Documentation requirements:
+      - update the existing README/usage docs if they exist instead of creating duplicates
+      - keep the docs accurate to the current code
+      - prefer brief practical examples
+      - if there is a CLI, document the useful commands
+      - if there are important caveats or assumptions, include them
+
+      Output requirements:
+      - return valid <<<FILE: ...>>> blocks for any documentation files you change
+      - do not invent endpoints that are not present in the code
+      - if you find undocumented public methods, include them
+      - if the code and docs disagree, trust the current code and note the discrepancy in your summary
+
+      Also return a short summary covering:
+      - which documentation files were changed
+      - what major sections were added or updated
+      - any public methods/endpoints that still need clarification
+  - name: "5: Generate Smoke Test"
+    description: Create or improve a smoke test that imports the module, calls initialize(), and exercises the most useful captured endpoints.
+    text: |
+      You are updating the smoke test for an existing Python API module.
+
+      You have been given:
+      1. A ZIP of the current module/repo
+      2. The selected capture session used to build the module
+      3. The current module code
+
+      Your job:
+      Create or improve a smoke test that proves the module can do something useful with the captured API surface.
+
+      Requirements:
+      - keep the result as a normal Python test/smoke script, not a web app
+      - import the real module package correctly
+      - instantiate the real client class
+      - call `client.initialize(...)` as the standard entrypoint before using other methods
+      - exercise the most useful production/data endpoints from the selected captures
+      - prefer stable assertions about payload shape and core values over overly fragile exact formatting
+      - if the project uses replay/capture-backed testing, reuse that pattern
+      - if the module supports live credentials, keep credentials out of code
+
+      Return:
+      - a short summary of what the smoke test now validates
+      - valid <<<FILE: ...>>> blocks for every changed file
+  - name: "6: Normalize Module Output To Shared Schema"
+    description: Add or revise a normalization function so vendor-specific output maps into the shared daily inverter output schema.
+    text: |
+      You are updating an existing Python API module so its exported per-inverter daily production data can be normalized into a shared cross-vendor schema.
+
+      You have been given:
+      1. A ZIP of the current module/repo
+      2. The selected capture session and/or existing output files
+      3. The shared schema file at `settings/normalized_daily_inverter_output_schema.yml`
+
+      Your job:
+      Add or revise a normalization function and any related exporter helpers so vendor-specific daily inverter output rows map as cleanly as possible into the shared schema.
+
+      Requirements:
+      - keep the result inside the real importable Python module/package or the project’s existing exporter helpers
+      - do not build a separate demo app
+      - preserve the module’s existing auth/session logic
+      - normalize overlapping concepts to shared names
+      - normalize daily production values to `daily_energy_kwh`
+      - remove split raw unit/scale/value fields after folding them into the normalized value, if the schema marks them as removable
+      - if a field cannot be mapped cleanly, keep it as an extra source field unless the schema or caller explicitly blacklists it
+      - if `inverter_rated_kw` is estimated rather than authoritative, preserve `inverter_rating_source`
+      - prefer one clear recursive normalization function such as `normalize_solar_data(...)` that can rename/drop overlapping keys anywhere in nested dict/list payloads
+      - build any flat row normalizers on top of that shared recursive helper instead of duplicating key-mapping logic
+
+      Use this workflow:
+      1. Read the shared schema file and honor its required/preferred fields.
+      2. Inspect the current module and exporters.
+      3. Map source fields into the shared schema.
+      4. Apply any default drop/blacklist fields from the schema.
+      5. Keep useful unmapped extras only if they still add value.
+      6. Update docs/tests if needed so the normalized shape is discoverable.
+
+      Return:
+      - a short mapping summary of source field -> normalized field
+      - any fields intentionally dropped
+      - any fields kept as extras
+      - valid <<<FILE: ...>>> blocks for every changed file

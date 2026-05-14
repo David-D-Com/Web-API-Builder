@@ -41,6 +41,7 @@ KEYRING_USERNAME_KEY = "__solis_username__"
 BASE_URL = "https://www.soliscloud.com"
 APP_URL = f"{BASE_URL}/overview/plantStation"
 HAR_DIR = Path(__file__).resolve().parent.parent / "har"
+ACTIVE_CAPTURE_SESSION_FILE = "_active_capture_session.json"
 
 
 def build_app_url(*, station_id: str | None = None) -> str:
@@ -107,11 +108,12 @@ def build_local_storage_state(client: SolisWebApiClient, profile_payload: dict[s
     }
 
 
-def build_capture_session_dir(prefix: str = "solis-json-capture", root: Path | None = None) -> Path:
+def build_capture_session_dir(prefix: str = "", root: Path | None = None) -> Path:
     base_dir = root or HAR_DIR
     base_dir.mkdir(parents=True, exist_ok=True)
     stamp = datetime.now().strftime("%Y%m%d-%H%M%S")
-    path = base_dir / f"{prefix}-{stamp}"
+    folder_name = f"{prefix}-{stamp}" if prefix else stamp
+    path = base_dir / folder_name
     path.mkdir(parents=True, exist_ok=True)
     return path
 
@@ -134,6 +136,23 @@ def capture_enabled(capture_dir: Path) -> bool:
     except (OSError, json.JSONDecodeError):
         return True
     return bool(payload.get("enabled", True))
+
+
+def active_capture_session(capture_root: Path) -> Path | None:
+    state_path = capture_root / ACTIVE_CAPTURE_SESSION_FILE
+    if not state_path.exists():
+        return None
+    try:
+        payload = json.loads(state_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return None
+    session_value = str(payload.get("active_session") or "").strip()
+    if not session_value:
+        return None
+    session_path = Path(session_value)
+    if session_path.exists():
+        return session_path
+    return None
 
 
 def _safe_slug(value: str, max_len: int = 80) -> str:
@@ -236,7 +255,7 @@ def _matches_capture_filters(
 def install_response_capture(
     context: Any,
     *,
-    capture_dir: Path,
+    capture_root: Path,
     capture_json: bool,
     capture_content_kinds: list[str],
     capture_url_contains: list[str],
@@ -245,15 +264,15 @@ def install_response_capture(
 ) -> dict[str, Any]:
     state: dict[str, Any] = {
         "count": 0,
-        "unique_count": 0,
-        "duplicate_count": 0,
-        "capture_dir": str(capture_dir),
+        "capture_root": str(capture_root),
         "capture_mode": capture_mode,
-        "entries": {},
+        "sessions": {},
     }
-    write_capture_control(capture_dir, enabled=True)
 
     def on_response(response: Any) -> None:
+        capture_dir = active_capture_session(capture_root)
+        if capture_dir is None or not capture_dir.exists():
+            return
         if not capture_enabled(capture_dir):
             return
         if not _matches_capture_filters(
@@ -266,21 +285,32 @@ def install_response_capture(
             return
 
         state["count"] += 1
+        session_state = state["sessions"].setdefault(
+            str(capture_dir),
+            {
+                "count": 0,
+                "unique_count": 0,
+                "duplicate_count": 0,
+                "capture_mode": capture_mode,
+                "entries": {},
+            },
+        )
+        session_state["count"] += 1
         request = response.request
         response_text, response_size = _response_text(response)
         fingerprint, normalized_request = _request_fingerprint(request)
         parsed = re.sub(r"^https?://", "", _normalize_url(response.url)).replace("/", "_")
 
-        existing = state["entries"].get(fingerprint)
+        existing = session_state["entries"].get(fingerprint)
         occurrence_count = 1
         if existing:
-            state["duplicate_count"] += 1
+            session_state["duplicate_count"] += 1
             occurrence_count = int(existing["occurrenceCount"]) + 1
         else:
-            state["unique_count"] += 1
+            session_state["unique_count"] += 1
 
         if capture_mode == "all":
-            filename = f"{state['count']:04d}-{_safe_slug(parsed)}.json"
+            filename = f"{session_state['count']:04d}-{_safe_slug(parsed)}.json"
         else:
             filename = f"{_safe_slug(parsed)}--{fingerprint}.json"
         output_path = capture_dir / filename
@@ -314,7 +344,7 @@ def install_response_capture(
         if payload["firstCapturedAt"] is None:
             payload["firstCapturedAt"] = payload["capturedAt"]
         output_path.write_text(json.dumps(payload, indent=2, ensure_ascii=False), encoding="utf-8")
-        state["entries"][fingerprint] = {
+        session_state["entries"][fingerprint] = {
             "filename": filename,
             "url": request.url,
             "method": request.method,
@@ -322,6 +352,7 @@ def install_response_capture(
             "firstCapturedAt": payload["firstCapturedAt"],
             "lastCapturedAt": payload["lastCapturedAt"],
         }
+        write_capture_summary(capture_dir, session_state)
         if existing and capture_mode == "last":
             print(f"Updated: {output_path.name} (occurrence {occurrence_count})")
         else:
@@ -377,7 +408,7 @@ def open_browser_from_client(
     profile_payload = client.profile()
     cookies = cookiejar_to_playwright_cookies(client)
     local_storage = build_local_storage_state(client, profile_payload)
-    capture_dir: Path | None = None
+    capture_root_path = capture_root or HAR_DIR
 
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=headless)
@@ -399,18 +430,16 @@ def open_browser_from_client(
 
         capture_state: dict[str, Any] | None = None
         if capture_json or capture_content_kinds or capture_url_contains or capture_domain_contains:
-            capture_dir = build_capture_session_dir(root=capture_root)
+            capture_root_path.mkdir(parents=True, exist_ok=True)
             capture_state = install_response_capture(
                 context,
-                capture_dir=capture_dir,
+                capture_root=capture_root_path,
                 capture_json=capture_json,
                 capture_content_kinds=capture_content_kinds,
                 capture_url_contains=capture_url_contains,
                 capture_domain_contains=capture_domain_contains,
                 capture_mode=capture_mode,
             )
-            if start_capture_paused:
-                write_capture_control(capture_dir, enabled=False)
 
         page = context.new_page()
 
@@ -433,26 +462,22 @@ def open_browser_from_client(
             "local_storage_keys": sorted(local_storage),
             "token_present_in_page": page.evaluate("() => localStorage.getItem('token') !== null"),
         }
-        if capture_dir:
-            result["capture_dir"] = str(capture_dir)
+        active_dir = active_capture_session(capture_root_path)
+        if active_dir:
+            result["capture_dir"] = str(active_dir)
+        if capture_state:
             result["capture_count"] = capture_state["count"] if capture_state else 0
-            result["capture_unique_count"] = capture_state["unique_count"] if capture_state else 0
-            result["capture_duplicate_count"] = (
-                capture_state["duplicate_count"] if capture_state else 0
-            )
 
         if headless:
-            if capture_dir and capture_state:
-                write_capture_summary(capture_dir, capture_state)
             result["body_text_snippet"] = page.locator("body").first.inner_text()[:500]
             context.close()
             browser.close()
             return result
 
         print(json.dumps(result, indent=2, ensure_ascii=False))
-        if capture_dir:
-            print(f"CAPTURE_DIR={capture_dir}")
-            print(f"Continuous capture active: {capture_dir}")
+        if active_dir:
+            print(f"CAPTURE_DIR={active_dir}")
+            print(f"Continuous capture active: {active_dir}")
             if capture_json:
                 print("Filter: JSON responses only")
             if capture_content_kinds:
@@ -462,12 +487,8 @@ def open_browser_from_client(
             if capture_domain_contains:
                 print(f"Domain filters: {capture_domain_contains}")
             print(f"Capture mode: {capture_mode}")
-            if start_capture_paused:
-                print("Capture starts paused.")
         print("Browser is open. Close it manually when finished.")
         page.wait_for_event("close", timeout=0)
-        if capture_dir and capture_state:
-            write_capture_summary(capture_dir, capture_state)
         context.close()
         browser.close()
         return result

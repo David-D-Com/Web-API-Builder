@@ -1,0 +1,37 @@
+id: soliscloud
+name: SolisCloud Web API
+description: SolisCloud browser-derived API module and helper workflow.
+module:
+  manifest_version: 1
+  package_path: python/src/soliscloud_web_api
+  client_file: python/src/soliscloud_web_api/client.py
+  client_class: SolisWebApiClient
+  processed_capture_dir: captures_processed\soliscloud
+  browser:
+    base_url: https://www.soliscloud.com
+  capture:
+    url_contains:
+    - /api/
+    domain_contains:
+    - soliscloud.com
+    include_json_only: true
+    mode: last
+    content_kinds:
+    - json
+commands:
+  run_tests: python .\tests\solis_test.py --no-browser
+  open_browser: python .\scripts\open_solis_browser_session.py
+  process_captures: python .\scripts\process_capture_dir.py
+pages:
+- name: Site Overview
+  route: /overview/plantStation
+- name: Station Details
+  route: /station/stationDetails/generalSituation/{station_id}
+- name: Inverter Page
+  route: /inverter
+- name: Alarm Page
+  route: /alarm
+- name: Warning Page
+  route: /warning
+actions:
+  prompts: []

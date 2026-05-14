@@ -1,0 +1,85 @@
+schema:
+  id: daily_inverter_output_v1
+  description: Shared normalized per-inverter daily production rows across vendor APIs.
+  recursive_normalizer:
+    function_name: normalize_solar_data
+    drop_marker: __DROP__
+    description: Recursively copy dict/list payloads, rename overlapping keys to shared names, and drop keys mapped to the drop marker.
+  target_unit:
+    energy: kWh
+  required_fields:
+    - provider
+    - date
+    - site_id
+    - site_name
+    - inverter_id
+    - daily_energy_kwh
+  preferred_fields:
+    - inverter_name
+    - inverter_serial
+    - inverter_model
+    - inverter_rated_kw
+    - source_system
+  optional_fields:
+    - sun_hours
+    - revenue_amount
+  field_guidance:
+    provider: Short stable vendor id such as fronius or solis.
+    date: ISO date string YYYY-MM-DD.
+    site_id: Stable site/system identifier from the source platform.
+    site_name: Human-readable site/system name.
+    inverter_id: Stable device/inverter identifier from the source platform.
+    inverter_name: Human-readable inverter label if available.
+    inverter_serial: Serial number if available.
+    inverter_model: Product/model identifier if available.
+    inverter_rated_kw: Rated inverter capacity in kW if known. If estimated, add inverter_rating_source.
+    daily_energy_kwh: Daily energy production normalized to kWh.
+    source_system: Optional provider-specific higher-level subsystem or module label.
+    sun_hours: Optional equivalent full-sun-hours style metric.
+    revenue_amount: Optional per-day revenue or value metric if exposed by the provider.
+  default_drop_fields:
+    - raw_energy_value
+    - raw_energy_unit
+    - raw_energy_scale
+    - source_interval
+    - source_channel
+  rename_map_examples:
+    fronius:
+      pv_system_id: site_id
+      pv_system_name: site_name
+      device_id: inverter_id
+      inverter_name: inverter_name
+      daily_output_kwh: daily_energy_kwh
+    solis:
+      station_id: site_id
+      station_name: site_name
+      inverter_id: inverter_id
+      inverter_sn: inverter_serial
+      inverter_model: inverter_model
+      inverter_rated_kw: inverter_rated_kw
+      daily_production_kwh: daily_energy_kwh
+      full_hour: sun_hours
+      money: revenue_amount
+  recursive_key_map_examples:
+    provider_shared:
+      pv_system_id: site_id
+      station_id: site_id
+      pv_system_name: site_name
+      station_name: site_name
+      device_id: inverter_id
+      daily_output_kwh: daily_energy_kwh
+      daily_production_kwh: daily_energy_kwh
+      inverter_sn: inverter_serial
+      full_hour: sun_hours
+      money: revenue_amount
+      raw_energy_value: __DROP__
+      raw_energy_unit: __DROP__
+      raw_energy_scale: __DROP__
+      source_interval: __DROP__
+      source_channel: __DROP__
+  normalization_rules:
+    - Normalize overlapping meanings to the shared field names above.
+    - Normalize daily production/energy values to kWh in daily_energy_kwh.
+    - Remove unit/scale component fields once their value has been folded into daily_energy_kwh.
+    - Keep unmapped useful source fields unless they are listed in the drop list.
+    - If a provider can only estimate inverter_rated_kw, keep inverter_rating_source so consumers know it is not authoritative.

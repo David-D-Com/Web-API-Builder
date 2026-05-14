@@ -16,7 +16,7 @@ Qt6 desktop app for managing browser-derived API modules in this repo.
 
 The first scaffold focuses on:
 
-- loading module manifests from `../modules/*/module.yml`
+- loading module manifests from `../settings/<module>.yml`
 - editing basic metadata and capture settings
 - keeping raw/processed capture roots as workspace-level settings
 - deriving module code paths automatically from module names
@@ -50,7 +50,7 @@ web-api-builder
 ## Notes
 
 - The app uses `PySide6` for Qt6.
-- Module manifests use YAML and are stored in the repo under `modules/`.
+- Module manifests use YAML and are stored in the repo under `settings/`.
 - New template modules automatically get a starter package under `python/src/<module_slug>/`
   and a smoke runner under `tests/<module_slug>_smoke.py`.
 - The app intentionally manages modules and helper workflows, not the internal logic of the target packages themselves.

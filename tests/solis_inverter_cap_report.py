@@ -27,6 +27,7 @@ PACKAGE_SRC = Path(__file__).resolve().parent.parent / "python" / "src"
 if str(PACKAGE_SRC) not in sys.path:
     sys.path.insert(0, str(PACKAGE_SRC))
 
+from local_secrets import get_secret
 from soliscloud_web_api import SolisSession, SolisWebApiClient, SolisWebApiError
 
 
@@ -101,6 +102,11 @@ def _load_keyring():
 
 
 def load_credentials() -> tuple[str | None, str | None]:
+    username = get_secret("SOLIS_USERNAME")
+    password = get_secret("SOLIS_PASSWORD")
+    if username and password:
+        return username, password
+
     if os.name != "nt":
         return None, None
     try:

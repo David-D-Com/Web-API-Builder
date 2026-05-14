@@ -8,8 +8,8 @@ This repository is intentionally not the same thing as the Python package.
   The actual installable `soliscloud_web_api` Python module.
 - `builder_app/`
   Qt6 desktop app for managing browser-derived API modules.
-- `modules/`
-  YAML manifests describing each managed target module.
+- `settings/`
+  YAML manifests describing each managed target module for the builder app.
 - `tests/`
   Smoke tests and platform-specific helpers.
 - `scripts/`

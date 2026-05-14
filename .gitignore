@@ -4,3 +4,6 @@ __pycache__/
 *.pyc
 *.egg-info/
 .vscode/launch.json
+.local-secrets/*.env
+.local-secrets/*.local
+dumps.7z

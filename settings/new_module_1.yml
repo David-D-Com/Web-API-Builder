@@ -1,0 +1,26 @@
+id: new_module_1
+name: Growwatt
+description: Starter manifest for a browser-derived API module.
+module:
+  manifest_version: 1
+  package_path: python/src/growwatt
+  client_file: python/src/growwatt/client.py
+  client_class: NewModule1Client
+  processed_capture_dir: captures_processed\new_module_1
+  browser:
+    base_url: https://www.inspectionsgroup.com
+  capture:
+    url_contains: []
+    domain_contains: []
+    content_kinds:
+    - json
+    mode: last
+commands:
+  run_tests: python .\tests\template_module_smoke.py
+  open_browser: ''
+  process_captures: ''
+pages:
+- name: Base
+  route: /
+actions:
+  prompts: []
