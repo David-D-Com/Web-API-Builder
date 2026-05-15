@@ -1,3 +1,7 @@
 [submodule "python/src/soliscloud_web_api"]
 	path = python/src/soliscloud_web_api
 	url = https://github.com/David-D-Com/api-solis.git
+[submodule "python/src/fronius"]
+	path = python/src/fronius
+	url = https://github.com/David-D-Com/api-fronius.git
+	branch = main

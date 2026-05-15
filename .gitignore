@@ -1,5 +1,6 @@
 har/
 captures_processed/
+dumps/
 __pycache__/
 *.pyc
 *.egg-info/

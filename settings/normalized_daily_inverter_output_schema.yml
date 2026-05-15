@@ -83,3 +83,4 @@ schema:
     - Remove unit/scale component fields once their value has been folded into daily_energy_kwh.
     - Keep unmapped useful source fields unless they are listed in the drop list.
     - If a provider can only estimate inverter_rated_kw, keep inverter_rating_source so consumers know it is not authoritative.
+    - Drop aggregate pseudo-inverter rows such as ALL_INVERTERS or TOTAL; normalized outputs should contain only real individual inverter/device rows.

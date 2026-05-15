@@ -41,6 +41,21 @@ STANDARD_KEY_MAP: dict[str, str] = {
 }
 
 
+def is_aggregate_inverter_label(value: Any) -> bool:
+    text = str(value or "").strip()
+    if not text:
+        return False
+    normalized = "".join(ch for ch in text.upper() if ch.isalnum())
+    return normalized in {
+        "ALLINVERTERS",
+        "ALLINVERTER",
+        "ALLDEVICES",
+        "ALLDEVICE",
+        "TOTAL",
+        "TOTALINVERTERS",
+    }
+
+
 def _is_sequence(value: Any) -> bool:
     return isinstance(value, Sequence) and not isinstance(value, (str, bytes, bytearray))
 
@@ -94,8 +109,13 @@ def normalize_solar_data(
     return data
 
 
-def normalize_daily_inverter_row(provider: str, row: Mapping[str, Any]) -> dict[str, Any]:
+def normalize_daily_inverter_row(provider: str, row: Mapping[str, Any]) -> dict[str, Any] | None:
     """Normalize a flat daily inverter output row to the shared schema."""
+
+    source_inverter_name = row.get("inverter_name")
+    source_inverter_id = row.get("inverter_id") or row.get("device_id")
+    if is_aggregate_inverter_label(source_inverter_name) or is_aggregate_inverter_label(source_inverter_id):
+        return None
 
     normalized = normalize_solar_data(dict(row))
     normalized["provider"] = provider
@@ -111,5 +131,8 @@ def normalize_daily_inverter_row(provider: str, row: Mapping[str, Any]) -> dict[
         normalized.setdefault("inverter_serial", str(row.get("inverter_sn") or ""))
         normalized.setdefault("inverter_model", str(row.get("inverter_model") or ""))
         normalized.setdefault("inverter_rating_source", "")
+
+    if is_aggregate_inverter_label(normalized.get("inverter_name")) or is_aggregate_inverter_label(normalized.get("inverter_id")):
+        return None
 
     return {key: value for key, value in normalized.items() if value != ""}
